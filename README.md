@@ -1,5 +1,5 @@
 # TED Talks Text Mining Project 
-Project repo on TED Talk text mining analysis: https://www.kaggle.com/rounakbanik/ted-talks
+TED Talks Kaggle dataset - https://www.kaggle.com/rounakbanik/ted-talks
 
 ## Description of Dataset
 The TED Talks dataset contains information on all the talks uploaded onto the official website up till
