@@ -1,7 +1,7 @@
 # TED_Talks_Text_Mining_Project
 Project repo on TED Talk text mining analysis: https://www.kaggle.com/rounakbanik/ted-talks
 
-## Descriptiopn of Dataset
+## Description of Dataset
 The TED Talks dataset contains information on all the talks uploaded onto the official website up till
 September 21st, 2017. The data sources are split into two csv files: ted_main.csv and transcripts.csv.
 
@@ -27,6 +27,7 @@ its persuasiveness more effective?
 Additionally, evaluation on the accuracy of the models used to identify the persuasiveness of a
 talk will be done, by comparing it with the ratings given by the viewers themselves within the ted_main.csv dataset.
 
+## Tasks List
 ### 1. Persuaion Analysis
 > Insert task description here
 
