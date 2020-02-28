@@ -10,7 +10,8 @@ level comments, description, speakers, titles, ratings, etcetera, whereas the la
 
 contains the transcripts of each TED Talk. Each record in the datasets are linked to the respective TED
 Talk on TED.com via the URL column.
-**The data has been scraped from the official TED Website and is available under the Creative Commons License.
+
+###### _**The data has been scraped from the official TED Website and is available under the Creative Commons License._
 
 ## Justification
 The aim of this project is to identify the persuasive techniques that TED Talk speakers employ while
