@@ -24,5 +24,20 @@ the following questions:
 its persuasiveness more effective?
 - Do different topics have different methods of persuasiveness?
 
-Additionally, the team will evaluate the accuracy of our models used to identify the persuasiveness of a
-talk, by comparing it with the ratings given by the viewers themselves within the ted_main.csv dataset.
+Additionally, evaluation on the accuracy of the models used to identify the persuasiveness of a
+talk will be done, by comparing it with the ratings given by the viewers themselves within the ted_main.csv dataset.
+
+### 1. Persuaion Analysis
+> Insert task description here
+
+### 2. Topic Modelling
+> Insert task description here
+
+#### 2.1 Document Clustering
+> Insert task description here
+
+#### 2.2 Document Classification
+> Insert task description here
+
+### 3. Document Retrieval
+> Insert task description here
