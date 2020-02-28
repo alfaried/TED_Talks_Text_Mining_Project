@@ -1,4 +1,4 @@
-# TED_Talks_Text_Mining_Project
+# TED Talks Text Mining Project 
 Project repo on TED Talk text mining analysis: https://www.kaggle.com/rounakbanik/ted-talks
 
 ## Description of Dataset
