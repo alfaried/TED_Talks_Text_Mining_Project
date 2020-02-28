@@ -18,9 +18,10 @@ giving their speeches. Our primary stakeholders are individuals who want to impr
 and presentation transcripts. We will focus on a series of tasks (mentioned in the later sections) to
 analyse the transcripts and relevant metadata of the talks, and identify the relevant properties to answer
 the following questions:
-● What makes a TED Talk persuasive or interesting?
-● How can a TED Talk be more persuasive? Are there certain words, phrases or topics that make
+- What makes a TED Talk persuasive or interesting?
+- How can a TED Talk be more persuasive? Are there certain words, phrases or topics that make
 its persuasiveness more effective?
-● Do different topics have different methods of persuasiveness?
+- Do different topics have different methods of persuasiveness?
+
 Additionally, the team will evaluate the accuracy of our models used to identify the persuasiveness of a
 talk, by comparing it with the ratings given by the viewers themselves within the ted_main.csv dataset.
