@@ -40,15 +40,17 @@ class PersuasionScore(MethodView):
         logging.info('Topic Keywords {}'.format(topic_keywords))
         logging.info('Related transcripts id {}'.format(related_document_list))
 
-        # get topic from LDA
-
         logging.info(
             'Retrieving transcript with higher score for {}'.format(input_df))
+        
+        all_df = pd.read_csv(app.config['SITE_ROOT'] + '/app/data/cleaned_dataset_with_persuasion_score.csv')
 
-        # get more persuasive transcript
+        all_df = all_df[all_df['id'].isin(related_document_list)]
+        filtered_df = all_df[all_df['persuasion_score'] > persuasion_score]
+        filtered_df = filtered_df.sort_values(by=['persuasion_score'])
 
-        res = {}
-        res['persuasion_score'] = 0.123
+        print(filtered_df.head())
+        res = {'persuasion-score': persuasion_score, 'topic-keywords': topic_keywords, 'top-5-persuasive-talks': filtered_df.head()}
         return json.dumps(res)
 
 register_api()
