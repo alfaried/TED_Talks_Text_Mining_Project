@@ -46,11 +46,14 @@ class PersuasionScore(MethodView):
         all_df = pd.read_csv(app.config['SITE_ROOT'] + '/app/data/cleaned_dataset_with_persuasion_score.csv')
 
         all_df = all_df[all_df['id'].isin(related_document_list)]
+        logging.info(all_df)
         filtered_df = all_df[all_df['persuasion_score'] > persuasion_score]
         filtered_df = filtered_df.sort_values(by=['persuasion_score'])
 
-        print(filtered_df.head())
-        res = {'persuasion-score': persuasion_score, 'topic-keywords': topic_keywords, 'top-5-persuasive-talks': filtered_df.head()}
-        return json.dumps(res)
+        top_persuasive_df = filtered_df[['url', 'persuasion_score']].head()
+
+        res = {'persuasion-score': persuasion_score, 'topic-keywords': topic_keywords.split(', '), 'top-5-persuasive-talks': top_persuasive_df.to_dict('records')}
+        logging.info(res)
+        return res
 
 register_api()

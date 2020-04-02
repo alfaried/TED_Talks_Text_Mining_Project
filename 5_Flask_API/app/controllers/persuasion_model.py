@@ -25,6 +25,6 @@ class PersuasionModel(object):
         persuasion_model = pickle.load(open(model_url, 'rb'))
 
         persuasion_score = persuasion_model.predict_proba(preprocessed_input_df)[:, 1]
-        return persuasion_score
+        return persuasion_score[0]
 
 persuasion_model = PersuasionModel()
