@@ -43,7 +43,7 @@ class PersuasionScore(MethodView):
         logging.info(
             'Retrieving transcript with higher score for {}'.format(input_df))
         
-        all_df = pd.read_csv(app.config['SITE_ROOT'] + 'app/data/cleaned_dataset_with_persuasion_score.csv')
+        all_df = pd.read_csv(app.config['SITE_ROOT'] + '/app/data/cleaned_dataset_with_persuasion_score.csv')
 
         all_df = all_df[all_df['id'].isin(related_document_list)]
         filtered_df = all_df[all_df['persuasion_score'] > persuasion_score]
