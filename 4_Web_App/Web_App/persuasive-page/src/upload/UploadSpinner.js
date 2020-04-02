@@ -183,27 +183,27 @@ class UploadSpinner extends Component {
     let statusSpinner = "hidden"; //for spinner
     let showScore = "hidden";
     // Toggle table
-    let showTable = "hidden";
     let display = "none";
 
     if(this.state.uploading || this.state.files.length <= 0){
       statusSpinner = "hidden";
       showScore = "hidden";
-      showTable = "hidden";
-      display = "none"
-    }
-    if(this.state.successfullUploaded){
-      statusSpinner = "visible";
-      showScore = "hidden";
-      showTable = "hidden";
       display = "none"
     }
 
-    if(this.state.scoreStatus){
-      showScore = "visible";
-      showTable = "visible";
-      display = ""
+    if(this.state.successfullUploaded){
+      statusSpinner = "visible";
+      showScore = "hidden";
+      display = "none"
     }
+
+
+    if(this.state.scoreStatus){
+      statusSpinner = "hidden";
+      showScore = "visible";
+      display = "";
+    }
+
     // fake fetch for spinner expiration
     const fetchData = () => {
       setTimeout(()=>{
@@ -260,7 +260,7 @@ class UploadSpinner extends Component {
         </div>
       </div>
       <div className="documentScore">
-        <div className="scoreTable" style={{visibility: showTable, display: display }}>
+        <div className="scoreTable" style={{display: display }}>
           <DocumentTable />
         </div>
         </div>
