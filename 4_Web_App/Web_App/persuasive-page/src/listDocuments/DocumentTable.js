@@ -8,7 +8,11 @@ class DocumentTable extends Component {
       super(props) //since we are extending class Table so we have to use super in order to override Component class constructor
       this.state = { //state is by default an object
          speakers: [
-            { Topic: "Environmental Awareness", Title: "How to turn climate anxiety into action", Speaker: 'Renee Lertzman', Score: 0.89 }
+            { Topic: "Technology", Title: "How to turn climate anxiety into action", Speaker: 'Renee Lertzman', Score: 0.89 },
+            { Topic: "Technology", Title: "Will AI take over the human race?", Speaker: 'Elon Musk', Score: 0.84 }, 
+            { Topic: "Contagion", Title: "The next outbreak?", Speaker: 'Bill Gates', Score: 0.81 }, 
+            { Topic: "Wellness", Title: "How to make stress your friend", Speaker: 'Kelly Mcgonigal', Score: 0.78 },
+            { Topic: "Human Behaviour", Title: "Your body language shapes who you are", Speaker: 'Amy Cuddy', Score: 0.75 }
          ]
       }
    }
