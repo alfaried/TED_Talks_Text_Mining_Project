@@ -5,6 +5,20 @@ from app import app
 import os
 import logging
 
+topic_catergorization = {
+    "food" : "agriculture",
+    "farmer" : "agriculture",
+    "farm" : "agriculture",
+    "plant" : "agriculture",
+    "grow" : "agriculture",
+    "internet" : "internet",
+    "comput" : "technology",
+    "technolog" : "technology",
+    "machin" : "technology",
+    "softwar" : "technology",
+    "garden" : "agriculture"
+}
+
 # Run this method once to set up pretrained model and dictionary
 def auto_setup(mallet_path):
     if mallet_path == None:
@@ -71,9 +85,17 @@ def upload_transcript(file_path, mallet_path):
 
     transcript_id_list = lda_obj.retrieve_related_transcript_id(int(dominant_topic[0]))
 
-    return_hash["Topic No."] = dominant_topic[0]
-    return_hash["Topic Prob."] = dominant_topic[1]
-    return_hash["Topic Keywords."] = dominant_topic[2]
-    return_hash["Related Documents"] = transcript_id_list
+    topic_theme = ""
+    try:
+        for topic in dominant_topic[2]:
+            topic_theme = topic_catergorization[topic]
+    except:
+        topic_theme = "agriculture"
+
+    return_hash["Topic_No."] = dominant_topic[0]
+    return_hash["Topic_Prob."] = dominant_topic[1]
+    return_hash["Topic_Theme"] = topic_theme
+    return_hash["Topic_Keywords"] = dominant_topic[2]
+    return_hash["Related_Documents"] = transcript_id_list
 
     return return_hash

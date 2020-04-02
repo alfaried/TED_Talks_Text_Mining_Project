@@ -30,9 +30,15 @@ class PersuasionScore(MethodView):
         persuasion_score = persuasion_model.get_persuasion_score(input_df)
         logging.info(persuasion_score)
 
-        lda_model.get_related_transcripts(input_df)
+        result_hash = lda_model.get_related_transcripts(input_df)
+        related_document_list = result_hash["Related_Documents"]
+        topic_theme = result_hash["Topic_Theme"]
+        topic_keywords = result_hash["Topic_Keywords"]
 
         logging.info('Retrieving topic for {}'.format(input_df))
+        logging.info('Topic {}'.format(topic_theme))
+        logging.info('Topic Keywords {}'.format(topic_keywords))
+        logging.info('Related transcripts id {}'.format(related_document_list))
 
         # get topic from LDA
 
