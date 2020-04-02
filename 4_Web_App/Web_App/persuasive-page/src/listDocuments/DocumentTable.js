@@ -7,25 +7,24 @@ class DocumentTable extends Component {
    constructor(props) {
       super(props) //since we are extending class Table so we have to use super in order to override Component class constructor
       this.state = { //state is by default an object
-         speakers: [
-            { Topic: "Technology", Title: "How to turn climate anxiety into action", Speaker: 'Renee Lertzman', Score: 0.89 },
-            { Topic: "Technology", Title: "Will AI take over the human race?", Speaker: 'Elon Musk', Score: 0.84 }, 
-            { Topic: "Contagion", Title: "The next outbreak?", Speaker: 'Bill Gates', Score: 0.81 }, 
-            { Topic: "Wellness", Title: "How to make stress your friend", Speaker: 'Kelly Mcgonigal', Score: 0.78 },
-            { Topic: "Human Behaviour", Title: "Your body language shapes who you are", Speaker: 'Amy Cuddy', Score: 0.75 }
+         topFiveScripts: [
+            { url: "url1", score: 0.45 },
+            { url: "url2", score: 0.51 },
+            { url: "url3", score: 0.62 },
+            { url: "url4", score: 0.44 },
+            { url: "url5", score: 0.78 }
+
          ]
       }
    }
 
    renderDocumentTable() {
-      return this.state.speakers.map((speakerName, index) => {
-         const { Topic, Title, Speaker, Score } = speakerName //destructuring
+      return this.state.topFiveScripts.map((transcript, index) => {
+         const { url, score } = transcript //destructuring
          return (
-            <tr key={Title}>
-               <td>{Topic}</td>
-               <td>{Title}</td>
-               <td>{Speaker}</td>
-               <td>{Score}</td>
+            <tr key={url}>
+               <td>{url}</td>
+               <td>{score}</td>
             </tr>
          )
       })
@@ -33,7 +32,7 @@ class DocumentTable extends Component {
 
 
    renderTableHeader() {
-      let header = Object.keys(this.state.speakers[0])
+      let header = Object.keys(this.state.topFiveScripts[0])
       return header.map((key, index) => {
          //return <th key={index}>{key.toUpperCase()}</th>
          return <th key={index}>{key}</th>
@@ -44,7 +43,7 @@ class DocumentTable extends Component {
       return (
          <div>
             <h1 id='DocumentTitle'>Refer to this document to improve your persuasiveness</h1>
-            <table id='speakers'>
+            <table id='topFiveScripts'>
                <tbody>
                   <tr>{this.renderTableHeader()}</tr>
                   {this.renderDocumentTable()}

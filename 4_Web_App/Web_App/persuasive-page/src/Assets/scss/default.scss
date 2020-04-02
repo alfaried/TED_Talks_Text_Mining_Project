@@ -114,7 +114,7 @@ body {
 	}
 
 	.Filename{
-		font-size:20px;
+		font-size:15px;
 		font-weight: bold;
 		margin-left: 10px; 
 	}
@@ -172,7 +172,8 @@ body {
 	}
 
 	.finalScore{
-		margin-top: -20%;
+		margin-top: -100px;
+		padding-bottom: 30px;
 	}
 
 
@@ -184,7 +185,7 @@ body {
 	  color: $white;
 	}
 
-	#speakers {
+	#topFiveScripts {
 	  text-align: center;
 	  //font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	  font-family: Roboto;
@@ -195,7 +196,7 @@ body {
 	  margin-bottom: 50px;
 	}
 
-	#speakers td, #speakers th {
+	#topFiveScripts td, #topFiveScripts th {
 	  border: 2px solid #ddd;
 	  padding: 8px;
 	  color: #515359;
@@ -203,12 +204,12 @@ body {
 
 	//#speakers tr:nth-child(even){background-color: #f2f2f2;}
 
-	#speakers tr:nth-child{background-color: $white};
+	#topFiveScripts tr:nth-child{background-color: $white};
 
-	#speakers tr:hover {background-color: none;}
+	#topFiveScripts tr:hover {background-color: none;}
 
 	// category header
-	#speakers th {
+	#topFiveScripts th {
 	  padding-top: 12px;
 	  padding-bottom: 12px;
 	  text-align: center;

@@ -255,7 +255,12 @@ class UploadSpinner extends Component {
 
           <div className="finalScore" style={{visibility: showScore}}>
             <h1>88%</h1>
-          </div>  
+          </div>
+
+          <div style={{visibility: showScore}}>
+            <p style={{textDecoration: "underline"}}>Topic Keywords</p>
+            <p>fuck, vagina</p>
+          </div>   
 
         </div>
       </div>
