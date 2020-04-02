@@ -1,0 +1,224 @@
+@import "_config.scss";
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+// Vars and Reset
+// 
+$theme:       #454cad;
+$dark-text:   #5f6982;
+
+header {
+	position: relative;
+	display: block;
+	width: 100%;
+	background: $white;
+	//background-image: linear-gradient(to right, #36D1DC, #5B86E5);
+	color: $black;
+	height:60px;
+
+
+	.logo {
+		position: absolute;
+		font-size: 20px;
+		font-weight: bold;
+		top: 50%;
+		left: 15px;
+		@include translateY(-50%);
+	}
+
+	nav,
+	nav ul,
+	nav ul li {
+		margin: 0;
+		padding: 0;
+	}
+
+
+	nav {
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		@include translateY(-10%);
+
+		ul li {
+			list-style-type: none;
+			display: inline-block;
+			margin-right: 15px;
+
+			//targets the className: last
+			&.first { 
+				//margin-right: 10px;
+			}
+
+			a {
+				font-size: 19px;
+				line-height: normal;
+				color: $white;
+			}
+		}
+	}
+
+}
+
+body {
+
+	.container-fluid {
+		background-image: linear-gradient(to right, #36D1DC, #5B86E5);
+		line-height: 24px;
+		text-align: center;
+	}
+
+	// Persuasive score title
+	.title {
+		margin:0 0 3% 0;
+		padding-top:30px;
+		color: $white;
+		font-size:25px;
+		font-weight: bold;
+	}
+
+	.uploadDoc {
+		font-size: 18px;
+		text-align: center;
+		margin:5%;
+	}
+
+	.submitButton {
+		text-align: center;
+		display: inline-block;
+	}
+
+	/**
+	.Card {
+	  background-color: white;
+	  padding:32px;
+	  margin-bottom: 50px;
+	  width:450%;
+	  align-items: flex-start;
+	  justify-content: flex-start;
+	  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+	  box-sizing: border-box;
+	}**/
+
+	.Card { //Trying our combined submit area
+	  background-color: white;
+	  padding:32px;
+	  margin-bottom: 40px;
+	  width:150%;
+	  align-items: flex-start;
+	  justify-content: flex-start;
+	  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+	  box-sizing: border-box;
+	  display: inline-block;
+	}
+
+	.Filename{
+		font-size:20px;
+		font-weight: bold;
+		margin-left: 10px; 
+	}
+
+	.main { //Trying our combined submit area
+		display: flex;
+		width: 100%;
+	}
+
+	.resultBufferArea { //Trying our combined submit area
+		position: relative;
+		width:100%;
+		//padding-top: 50px;
+		padding-bottom: 80px;
+		margin: auto;
+		//margin-top: 30px;
+		float: right;
+		color: $white;
+
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			width:100%;
+		}
+	}
+
+	.spinner {
+		margin-top: 30px;
+		padding:30px;
+	}
+
+	.everything{
+		width: 100%;
+	}
+
+	.submitArea{
+		display: flex;
+		padding-left: 10%;
+		padding-right: 5%;
+	}
+
+	.resultArea {
+		margin: 30px 50px 30px 50px;
+		width:250%;
+		padding: 0px 0 150px 0;
+		font-family: Roboto;
+		font-size: 22px;
+		color: $white;
+		font-weight: normal;
+
+	}
+
+	.scoreCaption {
+		text-align: center;
+	}
+
+	.finalScore{
+		margin-top: -20%;
+	}
+
+
+	#DocumentTitle {
+	  text-align: center;
+	  font-family: Roboto, Open Sans;
+	  font-size: 25px;
+	  margin: 40px 10px 15px 10px;
+	  color: $white;
+	}
+
+	#speakers {
+	  text-align: center;
+	  //font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	  font-family: Roboto;
+	  border-collapse: collapse;
+	  border: 2px solid #ddd;
+	  width: 100%;
+	  background-color: $white;
+	  margin-bottom: 50px;
+	}
+
+	#speakers td, #speakers th {
+	  border: 2px solid #ddd;
+	  padding: 8px;
+	  color: #515359;
+	}
+
+	//#speakers tr:nth-child(even){background-color: #f2f2f2;}
+
+	#speakers tr:nth-child{background-color: $white};
+
+	#speakers tr:hover {background-color: none;}
+
+	// category header
+	#speakers th {
+	  padding-top: 12px;
+	  padding-bottom: 12px;
+	  text-align: center;
+	  background-color: $white;
+	  //background-color: #4CAF50;
+	  color: #2d3563;
+	}
+
+	.documentTable{
+		padding:20px;
+	}
+	
+}
