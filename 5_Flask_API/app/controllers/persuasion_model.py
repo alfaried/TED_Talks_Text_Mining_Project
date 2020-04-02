@@ -5,6 +5,7 @@ import nltk
 import os
 
 from app import app
+
 class PersuasionModel(object):
     def _preprocess_input(self, input_df):
         transcript = input_df['transcript']
@@ -17,8 +18,7 @@ class PersuasionModel(object):
 
         return features_df
 
-    def get_persuasion_score(self, input_file):
-        input_df = pd.read_csv(input_file)
+    def get_persuasion_score(self, input_df):
         preprocessed_input_df = self._preprocess_input(input_df)
         
         model_url = os.path.join(app.config['SITE_ROOT'], "app/models", "persuasion_model.sav")

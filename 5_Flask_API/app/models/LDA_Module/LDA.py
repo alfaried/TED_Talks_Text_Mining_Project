@@ -1,11 +1,13 @@
 import gensim
 import os
 
+from app import app
+
 class LDA_Mallet:
     # Initialize class method
     def __init__(self, mallet_path):
-        self.clustered_data_folder = "LDA_Module/reference_data/clustered_data/"
-        self.lda_models_folder = "LDA_Module/models/"
+        self.clustered_data_folder = app.config['SITE_ROOT'] + '/app/models/LDA_Module/reference_data/clustered_data/'
+        self.lda_models_folder = app.config['SITE_ROOT'] + '/app/models/LDA_Module/models/'
         self.mallet_path = mallet_path
         self.lda_mallet_model = None
 

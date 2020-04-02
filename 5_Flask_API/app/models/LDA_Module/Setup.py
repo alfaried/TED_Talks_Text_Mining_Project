@@ -1,14 +1,19 @@
-from LDA_Module import LDA, Preprocess
+from app.models.LDA_Module import LDA, Preprocess
+
+from app import app 
 
 import os
+import logging
 
 # Run this method once to set up pretrained model and dictionary
 def auto_setup(mallet_path):
     if mallet_path == None:
         raise Exception("mallet_path is required")
+    
+    train_folder_path = app.config['SITE_ROOT'] + '/app/models/LDA_Module/reference_data/train_data/'
 
-    train_folder_path = "LDA_Module/reference_data/train_data/"
-
+    logging.info(app.config['SITE_ROOT'])
+    logging.info(train_folder_path)
     # Initialize class
     train_dataset = Preprocess.Dataset(train_folder_path, "train")
 
@@ -40,7 +45,7 @@ def auto_setup(mallet_path):
 
     # Write cluster to the reference data file
     print("Writing data..")
-    clustered_folder_path = "LDA_Module/reference_data/clustered_data/"
+    clustered_folder_path = app.config['SITE_ROOT'] + '/app/models/LDA_Module/reference_data/clustered_data/'
     for topic_id, transcript_list in clustered_data.items():
         cluster_folder_name = clustered_folder_path +  str(topic_id)
 

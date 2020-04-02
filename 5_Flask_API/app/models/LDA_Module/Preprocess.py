@@ -3,8 +3,10 @@ import nltk
 import re
 import os
 
+from app import app
+
 # Declare global variables
-dictionary_folder = "LDA_Module/models/dictionary/"
+dictionary_folder = app.config['SITE_ROOT'] + '/app/models/LDA_Module/models/dictionary/'
 stop_list = nltk.corpus.stopwords.words("english")
 stemmer = nltk.stem.porter.PorterStemmer()
 
