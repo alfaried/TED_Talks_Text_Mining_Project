@@ -18,7 +18,7 @@ topic_catergorization = {
     "softwar" : "technology",
     "garden" : "agriculture",
     "art" : "art",
-    "creat" : "art",
+    "creat" : "design",
     "design" : "design"
 
 }
@@ -95,7 +95,7 @@ def upload_transcript(file_path, mallet_path):
             topic_theme = topic_catergorization[topic]
             break
     except:
-        topic_theme = "art"
+        topic_theme = "design"
 
     return_hash["Topic_No."] = dominant_topic[0]
     return_hash["Topic_Prob."] = dominant_topic[1]
