@@ -1,7 +1,7 @@
 import json
 import logging
 import pandas as pd
-from flask import request, Response
+from flask import request, Response, jsonify
 from flask.views import MethodView
 
 from app import app
@@ -52,8 +52,8 @@ class PersuasionScore(MethodView):
 
         top_persuasive_df = filtered_df[['url', 'persuasion_score']].head()
 
-        res = {'persuasion-score': persuasion_score, 'topic-keywords': topic_keywords.split(', '), 'top-5-persuasive-talks': top_persuasive_df.to_dict('records')}
+        res = {'persuasion-score': persuasion_score, 'topic-keywords': topic_keywords.split(', '), 'topic-theme': topic_theme, 'top-5-persuasive-talks': top_persuasive_df.to_dict('records')}
         logging.info(res)
-        return res
+        return jsonify(res)
 
 register_api()

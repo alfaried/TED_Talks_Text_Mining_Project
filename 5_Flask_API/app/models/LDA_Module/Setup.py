@@ -16,7 +16,11 @@ topic_catergorization = {
     "technolog" : "technology",
     "machin" : "technology",
     "softwar" : "technology",
-    "garden" : "agriculture"
+    "garden" : "agriculture",
+    "art" : "art",
+    "creat" : "art",
+    "design" : "design"
+
 }
 
 # Run this method once to set up pretrained model and dictionary
@@ -89,8 +93,9 @@ def upload_transcript(file_path, mallet_path):
     try:
         for topic in dominant_topic[2]:
             topic_theme = topic_catergorization[topic]
+            break
     except:
-        topic_theme = "agriculture"
+        topic_theme = "art"
 
     return_hash["Topic_No."] = dominant_topic[0]
     return_hash["Topic_Prob."] = dominant_topic[1]
