@@ -89,7 +89,7 @@ class UploadSpinner extends Component {
                         var response = JSON.parse(req.responseText);
                         this.setState({
                             persuasionScore: response['persuasion-score'].toFixed(20) * 100,
-                            topicKeywords: response['topic-keywords'],
+                            topicKeywords: response['topic-keywords'].join(', '),
                             topicTheme: response['topic-theme'],
                             topPersuasiveTalks: response['top-5-persuasive-talks']
                         });
@@ -266,8 +266,9 @@ class UploadSpinner extends Component {
                         </div>
 
                         <div style={{ visibility: showScore }}>
-                            <p style={{ textDecoration: "underline" }}>Topic Theme / Keywords</p>
-                            <p>{this.state.topicTheme.join(', ')}</p>
+                            <p style={{ textDecoration: "underline" }}>Topic Theme</p>
+                            <p>{this.state.topicTheme}</p>
+                            <p style={{ textDecoration: "underline" }}>Topic Keywords</p>
                             <p>{this.state.topicKeywords}</p>
                         </div>
 
