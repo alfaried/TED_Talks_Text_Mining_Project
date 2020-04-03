@@ -18,6 +18,7 @@ class UploadSpinner extends Component {
             clearAfterSuccess: false,
             scoreStatus: false, // to show the score after the fake timeout call is done
             persuasionScore: null,
+            topicTheme: '',
             topicKeywords: [],
             topPersuasiveTalks: []
         };
@@ -89,6 +90,7 @@ class UploadSpinner extends Component {
                         this.setState({
                             persuasionScore: response['persuasion-score'],
                             topicKeywords: response['topic-keywords'],
+                            topicTheme: response['topic-theme'],
                             topPersuasiveTalks: response['top-5-persuasive-talks']
                         });
                         resolve(req.response)
@@ -252,20 +254,20 @@ class UploadSpinner extends Component {
 
 
                     <div className="resultBufferArea">
-
                         <p>
                             Persuasive Score:
-          </p>
+                        </p>
                         <Spinner className="spinner" animation="border" variant="light" role="status" style={{ visibility: statusSpinner }}>
                             <span className="sr-only">Loading...</span>
                         </Spinner>
 
                         <div className="finalScore" style={{ visibility: showScore }}>
-                            <h1>{this.state.persuasionScore}</h1>
+                            <h1>{this.state.persuasionScore.toFixed(20) * 100}%</h1>
                         </div>
 
                         <div style={{ visibility: showScore }}>
-                            <p style={{ textDecoration: "underline" }}>Topic Keywords</p>
+                            <p style={{ textDecoration: "underline" }}>Topic Theme / Keywords</p>
+                            <p>{this.state.topicTheme.join(', ')}</p>
                             <p>{this.state.topicKeywords}</p>
                         </div>
 

@@ -14,7 +14,7 @@ class DocumentTable extends Component {
             const url = row['url']
             return (
                 <tr key={url}>
-                    <td>{score}</td>
+                    <td>{score.toFixed(20) * 100}%</td>
                     <td>{url}</td>
                 </tr>
             )
